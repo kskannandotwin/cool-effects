@@ -1,84 +1,63 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200, 300, 400, 500, 600, 700, 800, 900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
-  box-shadow: border-box;
+  box-sizing: border-box;
+  outline: none;
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #833471;
-  transition: 0.5s;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+section {
+  position: relative;
   width: 100%;
-  height: 100%;
-  z-index: -2;
-  background: #ffc312;
-  transition: 0.5s;
-  clip-path: circle(250px at center);
-}
-
-.container {
-  position: relative;
-  width: 1100px;
-  height: 400px;
-  /* background: red; */
-}
-
-.card {
-  width: 300px;
-  height: 400px;
-  background: #fff;
-  position: absolute;
-  top: calc(50% - 200px);
-  left: 50%;
-  border-radius: 10px;
-  transform: translateX(-50%) translateY(calc(50px * var(--i))) rotate(40deg)
-    skew(-20deg, -10deg) scale(0.6);
-  box-shadow: 25px 20px 100px rgba(0, 0, 0, 0.2);
-  z-index: calc(-1 * var(--i));
-  transition: 0.5s;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px 0;
+  text-align: center;
 }
 
-.card:nth-child(2) {
-  opacity: 0.8;
+section h2 {
+  font-size: 24vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1em;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-attachment: fixed;
 }
 
-.card:nth-child(3) {
-  opacity: 0.6;
+section:nth-child(1) h2 {
+  background-image: url(1.jpg);
+  background-size: cover;
+}
+section:nth-child(2) h2 {
+  background-image: url(2.jpg);
+  background-size: cover;
 }
 
-.container:hover .card {
-  position: absolute;
-  z-index: 1;
-  opacity: 1;
-  transform: translateX(calc(-50% + calc(350px * var(--i))));
+section:nth-child(3) h2 {
+  background-image: url(3.jpg);
+  background-size: cover;
 }
 
-.content {
-  position: relative;
-  padding: 25px;
-  color: #333;
-  transition: 0.5s;
-  opacity: 0;
+section:nth-child(4) h2 {
+  background-image: url(4.jpg);
+  background-size: cover;
 }
 
-.container:hover .content {
-  opacity: 1;
-  transition-delay: calc(0.2s * var(--j));
+section p {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+section .content a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  text-decoration: none;
+  color: #000;
+  margin-top: 20px;
+  text-transform: capitalize;
+}
